@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{%static 'resto/assets/favicon.svg'%}" type="image/svg+xml">
+    <title>RestoConnect</title>
+    <style>
+        /* Use a linear gradient background for the body */
+        body {
+            background: linear-gradient(to right, white, yellow, orange);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Center the h1 element and use a shadow effect */
+        h1 {
+            text-align: center;
+            color: black;
+            text-shadow: 2px 2px 4px orange;
+        }
+
+        /* Use a flexbox layout for the form and the link */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Use a white background and rounded corners for the form */
+        form {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px orange;
+        }
+
+        /* Use black text and orange border for the inputs */
+        input {
+            color: black;
+            border: 2px solid orange;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        /* Use orange text and black border for the submit button */
+        input[type=submit] {
+            color: orange;
+            border: 2px solid black;
+            background: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        input[type=submit]:hover {
+            background-color: orange;
+            color: white;
+        }
+        /* Use orange text and underline for the link */
+        a {
+            color: orange;
+            text-decoration: underline;
+        }
+       </style>
+</head>
+<body>
+    <h1>RestoConnect</h1>
+    {% if message %}
+    <p>{{message}}</p>
+    {% endif %}
+
+    <div class="container">
+        <form action="/login" method="post">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required>
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <input type="submit" class='btn'value="Login">
+        </form>
+        <a href="/register">Register</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,598 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>RestoConnect - The Best Restaurants In Your Home</title>
+  <meta name="title" content="RestoConnect - The Best Restaurants In Your Home">
+  <meta name="description" content="This is a food html template made by Kanana">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="{%static 'resto/assets/favicon.svg'%}" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="{%static 'resto/style.css'%}">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+
+</head>
+
+<body>
+
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="loading-container" data-loading-container>
+    <div class="loading-circle"></div>
+  </div>
+
+
+
+
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">RestoConnect
+        <img src="{%static 'resto/assets/logo.svg'%}" width="120" height="28" alt=" home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">
+          <img src="{%static 'resto/assets/favicon.svg'%}" width="148" height="38" alt="RestoConnect home">
+        </a>
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Your Orders</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="/logout" class="navbar-link" data-nav-link>Logout</a>
+          </li>
+
+          
+
+        </ul>
+      </nav>
+
+      <div class="header-action">
+        <button class="cart-btn" aria-label="cart">
+          <ion-icon name="bag" aria-hidden="true"></ion-icon>
+        </button>
+
+        <a href="#" class="btn btn-primary has-after">Check Your Order</a>
+      </div>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-overlay data-nav-toggler></div>
+
+    </div>
+  </header>
+  <br/><br/>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero has-bg-image" aria-label="home"
+        style="background-image: url('../../static/resto/assets/hero-bg.png')">
+        <div class="container">
+
+          <div class="hero-content" data-reveal="left">
+            <h1 class="h1 hero-title">The Best Restaurants In Your Home</h1>
+
+            <p class="hero-text">
+              In a world where convenience meets gastronomic excellence, our platform redefines the way you explore, order, and enjoy food from the top-rated restaurants in your locality.
+            </p>
+          </div>
+
+          <figure class="hero-banner" data-reveal>
+
+            <img src="{%static 'resto/assets/hero-header-1.png'%}" width="680" height="720" alt="hero banner" class="w-100">
+
+
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #INSTRUCTION
+      -->
+
+      <section class="section instruction" aria-labelledby="">
+        <div class="container">
+
+          <h2 class="h2 section-title" id="instruction-label" data-reveal>How It Works</h2>
+
+          <p class="section-text" data-reveal>
+          Below is the seamless process of using our platform. Whether you're a first-time visitor or a regular user, Folllow the steps provide to navigate the platform with ease.
+          </p>
+
+          <ul class="grid-list">
+
+            <li data-reveal="left">
+              <div class="instruction-card">
+
+                <figure class="card-banner">
+                  <img src="{%static 'resto/assets/instructuion-1.png'%}" width="300" height="154" loading="lazy"
+                    alt="Select Restaurant" class="w-100">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h5 card-title">
+                    <span class="span">01</span>
+                    Select Restaurant
+                  </h3>
+
+                  <p class="card-text">
+                    This is an extensive list of local restaurants available for delivery through our service. Explore Your favorite spots, discover new culinary gems, and read reviews to make informed choices. 
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li data-reveal>
+              <div class="instruction-card">
+
+                <figure class="card-banner">
+                  <img src="{% static 'resto/assets/instructuion-2.png'%}" width="300" height="154" loading="lazy"
+                    alt="Select menu" class="w-100">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h5 card-title">
+                    <span class="span">02</span>
+                    Select menu
+                  </h3>
+
+                  <p class="card-text">
+                  Browse through the restaurant's menu, and exploring a variety of dishes and cuisines. The goal is to provide a virtual menu experience, mirroring the familiarity of in-person dining, allowing you to customize your orders based on your taste and dietary preferences.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li data-reveal="right">
+              <div class="instruction-card">
+
+                <figure class="card-banner">
+                  <img src="{% static 'resto/assets/instructuion-3.png'%}" width="300" height="154" loading="lazy"
+                    alt="Wait for delivery" class="w-100">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h5 card-title">
+                    <span class="span">03</span>
+                    Wait for delivery
+                  </h3>
+
+                  <p class="card-text">
+                    Once the order is placed, we provide information on the estimated delivery time and offer real-time tracking updates. You can sit back, relax, and anticipate the arrival of your delicious meal. Clear communication about the delivery process, including notifications on the status of the order, will be provided.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #TOP RESTAURANT
+      -->
+
+      <section class="section top-restaurant" aria-labelledby="top-restaurent-label">
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li data-reveal="left">
+              <h2 class="h2 section-title" id="top-restaurent-label">
+                3 Best Restaurants in Your Area
+              </h2>
+
+              <p class="section-text">
+                Within a few clicks, find meals that
+are affordable and accessible near you
+              </p>
+            </li>
+            {%for restaurant in restaurants%}
+            <li data-reveal="right">
+              <div class="restaurant-card">
+                <div class="card-icon">
+                  <img src="{{restaurant.imageUrl}}" width="100" height="100" loading="lazy"
+                    alt="{{restaurant.name}}" class="w-100">
+                </div>
+                <h3 class="h5 card-title">{{restaurant.name}}</h3>
+
+                <div class="rating-wrapper">
+                  <ion-icon name="star" aria-hidden="true"></ion-icon>
+                  <ion-icon name="star" aria-hidden="true"></ion-icon>
+                  <ion-icon name="star" aria-hidden="true"></ion-icon>
+                  <ion-icon name="star" aria-hidden="true"></ion-icon>
+                  <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div class="card-meta-wrapper">
+                  <button class="card-meta order"  data-name="{{restaurant.name}}">Order</button>
+                  <button class="card-meta review">Review</button>
+                </div>
+
+                <p class="card-text">
+                  {{restaurant.description}}
+                </p>
+
+              </div>
+            </li>
+            {%endfor%}
+          </ul>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="section cta has-bg-image" aria-labelledby="cta-label"
+        style="background-image: url('../../static/resto/assets/hero-bg.png')">
+        <div class="container">
+
+          <figure class="cta-banner" data-reveal="left">
+            <img src="{%static 'resto/assets/cta-banner.png' %}" width="680" height="704" loading="lazy" alt="cta banner"
+              class="w-100">
+          </figure>
+
+          <div class="cta-content" data-reveal="right">
+
+            <h2 class="h3 section-title" id="cta-label">
+              Food from your favorite restaurants to your table
+            </h2>
+
+            <p class="section-text">
+             Welcome to our food ordering website, where we bring the culinary delights of your favorite restaurants straight to your table. In a world that values convenience and flavor, we've curated a platform that bridges the gap between you and the diverse array of cuisines offered by local eateries.
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+
+      <!-- 
+        - #STATS
+      -->
+
+      <section class="stats" aria-label="statistics" data-reveal>
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li>
+              <h2 class="h3 section-title">Service shows good taste.</h2>
+            </li>
+
+            <li class="stats-item">
+              <span class="span">976</span>
+
+              <p class="stats-text">
+                Satisfied <br>
+                Customer
+              </p>
+            </li>
+
+            <li class="stats-item">
+              <span class="span">12</span>
+
+              <p class="stats-text">
+                Best <br>
+                Restaurants
+              </p>
+            </li>
+
+            <li class="stats-item">
+              <span class="span">1K+</span>
+
+              <p class="stats-text">
+                Food <br>
+                Delivered
+              </p>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+    </section>
+
+
+
+
+      <!-- 
+        - #TESTIMONIALS
+      -->
+
+      <section class="section testi" aria-labelledby="testi-label">
+        <div class="container">
+
+          <div class="testi-content" data-reveal="left">
+
+            <h2 class="h2 section-title" id="testi-label">What customers say about us</h2>
+
+            <blockquote class="testi-text">
+              "I'm thoroughly impressed! The website's user-friendly interface made ordering a breeze. The food arrived promptly, still piping hot, and the quality was top-notch. The diverse range of restaurant options catered to my every craving. Plus, the exclusive deals made it even better. A fantastic experience that brought the best local cuisines straight to my doorstep. Highly recommended!"
+            </blockquote>
+
+            <div class="wrapper">
+              <img src="{%static 'resto/assets/testi-avatar.jpg'%}" width="70" height="70" loading="lazy" alt="Thomas Adamson"
+                class="author-img">
+
+              <div>
+                <p class="author-title">Shaquan Roberts</p>
+
+                <div class="rating-wrapper">
+                  <ion-icon name="star" aria-hidden="true"></ion-icon>
+                  <ion-icon name="star" aria-hidden="true"></ion-icon>
+                  <ion-icon name="star" aria-hidden="true"></ion-icon>
+                  <ion-icon name="star" aria-hidden="true"></ion-icon>
+                  <ion-icon name="star" aria-hidden="true"></ion-icon>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <figure class="testi-banner" data-reveal="right">
+            <img src="{%static 'resto/assets/testimonial-banner.png'%}" width="680" height="588" alt="testimonial banner"
+              class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #FEEDBACK
+      -->
+
+      <section class="section newsletter" aria-label="newsletter">
+        <div class="container">
+
+          <figure class="newsletter-banner" data-reveal="left">
+            <img src="{%static 'resto/assets/newsletter-banenr.png'%}" width="680" height="405" loading="lazy" alt="Illustration"
+              class="w-100">
+          </figure>
+
+          <div class="newsletter-content" data-reveal="right">
+            <h2 class="h4 section-title">
+              Provide us With Your Honest Feedback to Improve our Services.
+            </h2>
+
+            <div class="input-wrapper">
+              <input type="email" name="email_address" placeholder="Input Feedback" required class="input-field">
+
+              <button type="submit" class="btn btn-primary has-after">
+                <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Submit</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="section footer-top grid-list">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="{%static 'resto/assets/favicon.svg'%}" width="148" height="38" alt="RestoConnect home">
+          </a>
+
+          <h2 class="h2 section-title">The Best Restaurants in Your Home</h2>
+
+          <p class="section-text">
+            In a world where convenience meets gastronomic excellence, our platform redefines the way you explore, order, and enjoy food from the top-rated restaurants in your locality.
+          </p>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title h5">Menu</p>
+          </li>
+
+          
+          <li>
+            <a href="#" class="footer-link">
+              <span class="span">Home</span>
+
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <span class="span">Your Order</span>
+
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="/logout" class="footer-link">
+              <span class="span">Log out</span>
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title h5">Contacts</p>
+          </li>
+
+          <li>
+            <address class="address">
+              <ion-icon name="location" aria-hidden="true"></ion-icon>
+
+              <span class="span">MaasaiLodge, Rongai-Kenya</span>
+            </address>
+          </li>
+
+          <li>
+            <a href="mailto:restoconnect@mail.net" class="footer-link">
+              <ion-icon name="mail" aria-hidden="true"></ion-icon>
+
+              <span class="span">restoconnect@gmail.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+12344567890" class="footer-link">
+              <ion-icon name="call" aria-hidden="true"></ion-icon>
+
+              <span class="span">0722 234 456</span>
+            </a>
+          </li>
+
+          <li>
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="{% static 'resto/script.js'%}"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
