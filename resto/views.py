@@ -1,12 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Restaurant, Review, Feedback
+from django.http import HttpResponse,JsonResponse
+from .models import Restaurant, Review, Feedback,Order,Menu
 from django.contrib.auth import authenticate,logout
 from django.contrib.auth import login as auth_login
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 @login_required(login_url='/login')
@@ -59,3 +60,39 @@ def register(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("login"))
+
+def order(request,resturant_name,order_name):
+    if request.method == "POST":
+        resturant=Restaurant.objects.get(name=resturant_name)
+        user=request.user
+        order=Order.objects.create(user=user,restaurant=resturant,order=order_name)
+        order.save()
+        return JsonResponse({"message": "Order placed successfully."}, status=201)
+
+def orderList(request):
+    user=request.user
+    orders=Order.objects.filter(user=user)
+    return render(request, 'resto/orders.html', {
+        'orders': orders,
+        'user':user.username,
+    })
+    
+def menu(request,resturant_name):
+    resturant=Restaurant.objects.get(name=resturant_name)
+    try:
+        menu=Menu.objects.filter(restaurant=resturant)
+    except Menu.DoesNotExist:
+        menu=None
+    return render(request, 'resto/menu.html', {
+        'menu': menu,
+        'resturant':resturant_name,
+    })
+
+def feedback(request):
+    if request.method == "POST":
+        user=request.user
+        text=request.POST["feedback"]
+        feedback=Feedback.objects.create(user=user,text=text)
+        feedback.save()
+        return HttpResponseRedirect(reverse("index"))
+    

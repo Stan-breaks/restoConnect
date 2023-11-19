@@ -12,9 +12,26 @@ const addEventOnElements = function (elem, type, callback) {
   }
 }
 
+const csrftoken = document.querySelector("#csrf_token").value;
+
 document.querySelectorAll(".order").forEach(function (elem) {
   elem.addEventListener("click", function (e) {
-   alert(`Your ${e.target.dataset.name} special order has been received. Thank you!`);
+   alert("Order placed successfully");
+   fetch(`/order/${e.target.dataset.name}/${e.target.dataset.name1}`, {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": csrftoken
+      },
+      body: JSON.stringify({
+        id: e.target.dataset.id
+      })
+    })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    })
   })
 });
 

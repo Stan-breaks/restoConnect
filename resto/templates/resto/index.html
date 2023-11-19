@@ -77,7 +77,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link" data-nav-link>Your Orders</a>
+            <a href="/orderList" class="navbar-link" data-nav-link>Your Orders</a>
           </li>
 
           <li class="navbar-item">
@@ -94,7 +94,7 @@
           <ion-icon name="bag" aria-hidden="true"></ion-icon>
         </button>
 
-        <a href="#" class="btn btn-primary has-after">Check Your Order</a>
+        <a href="/orderList" class="btn btn-primary has-after">Check Your Order</a>
       </div>
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
@@ -112,6 +112,7 @@
 
 
   <main>
+    <input type="hidden" id="csrf_token" value="{{csrf_token}}">
     <article>
 
       <!-- 
@@ -260,7 +261,7 @@ are affordable and accessible near you
               </p>
             </li>
             {%for restaurant in restaurants%}
-            <li data-reveal="right">
+            <li data-reveal="{{restaurant.dataAlign}}">
               <div class="restaurant-card">
                 <div class="card-icon">
                   <img src="{{restaurant.imageUrl}}" width="100" height="100" loading="lazy"
@@ -277,8 +278,7 @@ are affordable and accessible near you
                 </div>
 
                 <div class="card-meta-wrapper">
-                  <button class="card-meta order"  data-name="{{restaurant.name}}">Order</button>
-                  <button class="card-meta review">Review</button>
+                  <a href="/menu/{{restaurant.name}}" class="card-meta menu">Menu</a>
                 </div>
 
                 <p class="card-text">
@@ -438,15 +438,14 @@ are affordable and accessible near you
               Provide us With Your Honest Feedback to Improve our Services.
             </h2>
 
-            <div class="input-wrapper">
-              <input type="email" name="email_address" placeholder="Input Feedback" required class="input-field">
-
+            <form class="input-wrapper" action="/feedback/" method="post">
+              {% csrf_token %}
+              <input type="text" name="feedback" placeholder="Input Feedback" required class="input-field">
               <button type="submit" class="btn btn-primary has-after">
                 <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
-
                 <span class="span">Submit</span>
               </button>
-            </div>
+            </form>
 
           </div>
 
@@ -496,7 +495,7 @@ are affordable and accessible near you
           </li>
 
           <li>
-            <a href="#" class="footer-link">
+            <a href="/orderList" class="footer-link">
               <span class="span">Your Order</span>
 
               <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
