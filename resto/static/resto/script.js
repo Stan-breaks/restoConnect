@@ -35,7 +35,16 @@ document.querySelectorAll(".order").forEach(function (elem) {
   })
 });
 
-
+document.querySelectorAll(".review").forEach(function (elem) {
+   elem.addEventListener("click", function (e) {
+    data = e.target.dataset.name;
+    document.querySelectorAll(".review").forEach(function (elem) {
+      if (elem.dataset.name == data) {
+        elem.style.display = "block";
+      }
+    })
+   })
+});
 /**
  * LOADING
  */

@@ -13,7 +13,7 @@ class Review(models.Model):
 class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    imageUrl = models.CharField(max_length=100)
+    imageUrl = models.CharField(max_length=500)
     dataAlign=models.CharField(max_length=100)
     reviews = models.ManyToManyField(Review, blank=True)
     def __str__(self):
@@ -40,7 +40,7 @@ class Menu(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     price = models.IntegerField()
-    imageUrl = models.CharField(max_length=100)
+    imageUrl = models.CharField(max_length=500)
     def __str__(self):
         return self.name
     

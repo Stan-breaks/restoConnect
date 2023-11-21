@@ -279,8 +279,18 @@ are affordable and accessible near you
 
                 <div class="card-meta-wrapper">
                   <a href="/menu/{{restaurant.name}}" class="card-meta menu">Menu</a>
+                  <a  class="card-meta review" data-name="{{restaurant.name}}">Review</a>
                 </div>
-
+                <div class="newsletter-content" data-reveal="right">
+            
+            <form class="input-wrapper reviewInput" action="/review/{{restaurant.name}}" method="post" data-name="{{restaurant.name}}" style="display: none;">
+              {% csrf_token %}
+              <input type="text" name="review" placeholder="Input Review" required class="input-field">
+              <button type="submit" class="btn btn-primary has-after">
+                <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
+                <span class="span">Submit</span>
+              </button>
+            </form>
                 <p class="card-text">
                   {{restaurant.description}}
                 </p>

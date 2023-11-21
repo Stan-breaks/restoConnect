@@ -84,7 +84,7 @@ def menu(request,resturant_name):
     except Menu.DoesNotExist:
         menu=None
     return render(request, 'resto/menu.html', {
-        'menu': menu,
+        'menu': menu, 
         'resturant':resturant_name,
     })
 
@@ -96,3 +96,15 @@ def feedback(request):
         feedback.save()
         return HttpResponseRedirect(reverse("index"))
     
+def empty(request):
+        return HttpResponseRedirect(reverse("login"))
+
+def review(request,resturant_name):
+    if request.method == "POST":
+        user=request.user
+        text=request.POST["review"]
+        resturant=Restaurant.objects.get(name=resturant_name)
+        review=Review.objects.create(user=user,review=text)
+        review.save()
+        resturant.reviews.add(review)
+        return HttpResponseRedirect(reverse("index"))
