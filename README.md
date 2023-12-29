@@ -24,15 +24,11 @@ pip install Django
     ```bash
     cd RestoConnect
     ```
-3. Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
-4. Apply the migrations:
+3. Apply the migrations:
     ```bash
     python manage.py migrate
     ```
-5. Run the server:
+4. Run the server:
     ```bash
     python manage.py runserver
     ```
