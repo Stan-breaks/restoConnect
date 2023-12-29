@@ -1,9 +1,50 @@
-# restoConnect
 
-The purpose of our project, RestoConnect is to address this critical gap by creating a
-user-friendly restaurant website that prioritizes affordability and accessibility. We are committed
-to providing a platform that enables customers to explore budget-friendly menus, place orders
-within their financial means, and engage with local eateries in a way that fosters a sense of
-community and inclusivity. RestoConnect aims to revolutionize the restaurant industry by
-democratizing access to affordable and delicious meals, thereby enhancing the dining experience
-for budget-conscious customers and promoting the sustainability of local eateries.
+# RestoConnect
+
+RestoConnect is a basic restaurant website built using Django.
+
+## Requirements
+
+- Python 3
+- Django
+- A database (SQLite, PostgreSQL, MySQL, etc.)
+
+You can install Django using pip:
+```bash
+pip install Django
+```
+
+## Setup
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Stan-breaks/restoConnect.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd RestoConnect
+    ```
+3. Install the required packages:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Apply the migrations:
+    ```bash
+    python manage.py migrate
+    ```
+5. Run the server:
+    ```bash
+    python manage.py runserver
+    ```
+
+Now, you can access the website at `http://localhost:8000`.
+
+## Features
+
+- View restaurant menu
+- Make a reservation
+- Contact us form
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
